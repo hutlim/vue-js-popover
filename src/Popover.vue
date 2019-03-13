@@ -54,6 +54,14 @@ export default {
       type: Number,
       default: 0.5,
       validator: (v) => v >= 0 && v <= 1
+    },
+    top: {
+      type: Number,
+      default: 0
+    },
+    left: {
+      type: Number,
+      default: 0
     }
   },
   data () {
@@ -167,8 +175,8 @@ export default {
       }
 
       return {
-        left: centerX + x,
-        top: centerY - y
+        left: centerX + x + this.left,
+        top: centerY - y + this.top
       }
     }
   }
